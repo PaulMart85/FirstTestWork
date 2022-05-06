@@ -1,15 +1,27 @@
 ﻿// формирование результирующего массива строк, длина которых меньше либо равна lim символов
 string[] GetFormedArray(string[] array, int lim)
 {
-    string[] resArray = {};
+    int len = array.Length, k = 0;
+    int[] index = new int[len]; // индексы элементов исходного массива, которые войдут в результирующий массив 
 
+    // вычисляем размер результирующего массива
+    for (int i = 0; i < len; i++)
+        if (array[i].Length <= lim) 
+            index[k++] = i;
+
+    // формируем результирующий массив
+    string[] resArray = new string[k];    
+    for (int j = 0; j < k; j++)
+        resArray[j] = array[index[j]];
+        
     return resArray;
 }
 
 // вывод массива
 string PrintArray(string[] arr)
 {
-    string result = string.Empty;    
+    string result = string.Empty;
+    result = $"[{String.Join(", ", arr)}]";    
 
     return result;
 }
