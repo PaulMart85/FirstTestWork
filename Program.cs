@@ -38,3 +38,23 @@ Console.WriteLine(PrintArray(resultArray));
 
 // вариант вывода в файл проекта
 File.WriteAllText("res.txt", PrintArray(initialArray) + " -> " + PrintArray(resultArray));
+
+// тестирование
+trim = 3;
+
+string[] initialArray1 = {"1234", "1567", "-2", "computer science"}; 
+Console.WriteLine();
+Console.Write(PrintArray(initialArray1) + " -> ");
+Console.WriteLine(PrintArray(GetFormedArray(initialArray1, trim)));
+
+string[] initialArray2 = {"Russia", "Denmark", "Kazan"}; 
+Console.WriteLine();
+Console.Write(PrintArray(initialArray2) + " -> ");
+Console.WriteLine(PrintArray(GetFormedArray(initialArray2, trim)));
+
+trim = 7;
+
+string[] initialArray3 = {"Russia", "Denmark", "Kazan"}; 
+Console.WriteLine();
+Console.Write(PrintArray(initialArray3) + " -> ");
+Console.WriteLine(PrintArray(GetFormedArray(initialArray3, trim)));
